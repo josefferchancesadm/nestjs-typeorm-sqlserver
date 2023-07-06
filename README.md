@@ -77,4 +77,80 @@ Nest is [MIT licensed](LICENSE).
 - https://typeorm.io/
 
 
+## Teste de requisição via browser
+
+fetch("http://localhost:3001/users/create", {
+   headers: {
+      'Content-Type': 'application/json;charset=utf-8'
+   },
+  "body": JSON.stringify({username:"testes joseffer", email:"testechances@email.com"}),
+  "method": "POST"
+});
+
+fetch("http://localhost:3001/users", {
+   headers: {
+      'Content-Type': 'application/json;charset=utf-8',
+      'authorization': '123b',
+   }, 
+  "method": "GET"
+});
+
+fetch("http://localhost:3001/users", {
+   headers: {
+      'Content-Type': 'application/json;charset=utf-8'
+   },
+  "body": JSON.stringify({username:"testes joseffer", password:"123@321"}),
+  "method": "POST"
+});
+
+fetch("http://localhost:3001/users/6", {
+   headers: {
+      'Content-Type': 'application/json;charset=utf-8'
+   },
+  "body": JSON.stringify({password:"123#"}),
+  "method": "PUT"
+});
+
+fetch("http://localhost:3001/users/6", {
+   headers: {
+      'Content-Type': 'application/json;charset=utf-8'
+   },
+  "body": "",
+  "method": "DELETE"
+});
+
+fetch("http://localhost:3001/users/5/profile", {
+   headers: {
+      'Content-Type': 'application/json;charset=utf-8'
+   },
+  "body": JSON.stringify({firstname:"profile01", lastname:"joseffer01", age: 40, bod: "03-09-1982"}),
+  "method": "POST"
+});
+
+fetch("http://localhost:3001/users/5/post", {
+   headers: {
+      'Content-Type': 'application/json;charset=utf-8'
+   },
+  "body": JSON.stringify({title:"Ola mundo 1", description: "eu amo programar 1"}),
+  "method": "POST"
+});
+
+
+instalação do nest
+npm i -g @nestjs/cli
+
+criar novo projeto
+nest new [nomeprojeto]
+
+validador de classes
+npm i class-validator class-transformer
+
+
+obs: Gerar help do nest com o comando nest -h
+
+Nestjs com typeorm + banco de dados sqlserver
+instale as bibliotecas
+npm add @nestjs/typeorm typeorm mssql tedious
+
+--------------------------------------------------------------
 
